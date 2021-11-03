@@ -4,7 +4,8 @@ const net = require("net");
 const connect = function () {
   const conn = net.createConnection({
     host: '165.227.47.243', // IP address here,
-    port: 50541 // PORT number here,
+    port: 50541, // PORT number here,
+    Name: 'HaJ'
   });
 
   // interpret incoming data as text
@@ -12,6 +13,7 @@ const connect = function () {
 
   conn.on('connect', () => {
     console.log("Successfully connected to server!");
+    conn.write('Name: HJA');
   });
 
   conn.on('data', (data) => {
