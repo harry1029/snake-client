@@ -13,6 +13,7 @@ const connect = function () {
 
   conn.on('connect', () => {
     console.log("Successfully connected to server!");
+    conn.write('Name: HJA');
   });
 
   conn.on('data', (data) => {
@@ -21,8 +22,5 @@ const connect = function () {
 
   return conn;
 };
-
-console.log("Connecting ...");
-connect();
 
 module.exports = {connect};
